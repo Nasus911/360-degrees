@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2d211c" />
+    <title>360 Degrees Specialty Cafe - Lipa Branch | Customer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-role="customer" data-default-page="home">
+    <div class="app" id="app">
+      <aside class="sidebar">
+        <div class="brand"><div class="brand-mark">360</div><div><strong>360 Degrees Specialty Cafe</strong><small>Lipa Branch</small></div></div>
+        <div class="role-switch">
+          <label for="role-select">Workspace</label>
+          <select id="role-select" data-role-select>
+            <option value="admin">Admin</option>
+            <option value="staff">Barista / Cashier</option>
+            <option value="customer" selected>Customer</option>
+          </select>
+        </div>
+        <div class="nav-label">Your coffee shop</div>
+        <nav class="nav" aria-label="Customer navigation">
+          <button class="active" data-page="home" aria-current="page"><span class="nav-icon">⌂</span>Home</button>
+          <button data-page="menu"><span class="nav-icon">☕</span>Menu</button>
+          <button data-page="orders"><span class="nav-icon">◷</span>My orders</button>
+          <button data-page="history"><span class="nav-icon">↺</span>History</button>
+          <button data-page="wallet"><span class="nav-icon">◉</span>Wallet & rewards</button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="store">Lipa Branch · Lipa City<small>Open today until 10:00 PM</small></div>
+          <div class="person"><div class="avatar">MR</div><div><strong>Mika Reyes</strong><small>360 Rewards member</small></div></div>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="crumb">360 Degrees Specialty Cafe <span class="muted">/</span> <span id="breadcrumb-page">Home</span></div>
+          <div class="top-actions"><span class="location">⌖ &nbsp;Lipa Branch · Lipa City</span><button class="icon-button" aria-label="Notifications" data-action="notifications">♧</button></div>
+        </header>
+        <section class="content" id="content-view" aria-live="polite"></section>
+      </main>
+      <nav class="mobile-nav" aria-label="Customer mobile navigation">
+        <button class="active" data-page="home" aria-current="page"><span>⌂</span>Home</button>
+        <button data-page="menu"><span>☕</span>Menu</button>
+        <button data-page="orders"><span>◷</span>Orders</button>
+        <button data-page="history"><span>↺</span>History</button>
+        <button data-page="wallet"><span>◉</span>Wallet</button>
+      </nav>
+      <div id="overlay-root"></div>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

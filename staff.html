@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2d211c" />
+    <title>360 Degrees Specialty Cafe - Lipa Branch | Barista / Cashier</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-role="staff" data-default-page="pos">
+    <div class="app" id="app">
+      <aside class="sidebar">
+        <div class="brand"><div class="brand-mark">360</div><div><strong>360 Degrees Specialty Cafe</strong><small>Lipa Branch</small></div></div>
+        <div class="role-switch">
+          <label for="role-select">Workspace</label>
+          <select id="role-select" data-role-select>
+            <option value="admin">Admin</option>
+            <option value="staff" selected>Barista / Cashier</option>
+            <option value="customer">Customer</option>
+          </select>
+        </div>
+        <div class="nav-label">Service workspace</div>
+        <nav class="nav" aria-label="Barista and cashier navigation">
+          <button class="active" data-page="pos" aria-current="page"><span class="nav-icon">▣</span>Point of sale</button>
+          <button data-page="queue"><span class="nav-icon">◷</span>Order queue</button>
+          <button data-page="receipts"><span class="nav-icon">▤</span>Receipts</button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="store">Lipa Branch · Lipa City<small>Open today until 10:00 PM</small></div>
+          <div class="person"><div class="avatar">LR</div><div><strong>Luis Reyes</strong><small>Barista · Shift A</small></div></div>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="crumb">360 Degrees Specialty Cafe <span class="muted">/</span> <span id="breadcrumb-page">Point of sale</span></div>
+          <div class="top-actions"><span class="location">⌖ &nbsp;Lipa Branch · Lipa City</span><button class="icon-button" aria-label="Notifications" data-action="notifications">♧</button></div>
+        </header>
+        <section class="content" id="content-view" aria-live="polite"></section>
+      </main>
+      <nav class="mobile-nav" aria-label="Barista and cashier mobile navigation">
+        <button class="active" data-page="pos" aria-current="page"><span>▣</span>Point of sale</button>
+        <button data-page="queue"><span>◷</span>Order queue</button>
+        <button data-page="receipts"><span>▤</span>Receipts</button>
+      </nav>
+      <div id="overlay-root"></div>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
