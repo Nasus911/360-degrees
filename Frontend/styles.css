@@ -156,6 +156,11 @@
       .field input, .field select { width: 100%; min-height: 40px; padding: 0 11px; border: 1px solid var(--line); border-radius: 8px; background: white; }
       .form-actions { display: flex; justify-content: end; gap: 8px; margin-top: 6px; }
       .mobile-nav { display: none; }
+      html { scroll-behavior: smooth; }
+      @media (pointer: coarse) {
+        button, select, input { min-height: 44px; }
+        .qty-button { min-width: 36px; min-height: 36px; }
+      }
       @media (max-width: 1020px) {
         .app { grid-template-columns: 205px minmax(0, 1fr); }
         .content { padding: 26px 22px 45px; }
@@ -170,9 +175,14 @@
         .brand { padding: 0; }
         .brand-mark { width: 34px; height: 34px; }
         .role-switch, .nav-label, .sidebar .nav, .sidebar-foot { display: none; }
+        .brand strong { font-size: 16px; }
+        .brand small { font-size: 9px; }
         .topbar { min-height: 54px; padding: 8px 16px; }
+        .crumb { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .top-actions { flex: none; }
         .content { padding: 24px 16px 35px; }
-        .page-heading { align-items: start; }
+        .page-heading { align-items: stretch; flex-direction: column; gap: 13px; margin-bottom: 18px; }
+        .page-heading > .button { align-self: stretch; width: 100%; }
         .location { display: none; }
         .stats { gap: 10px; }
         .stat { min-height: 100px; padding: 14px; }
@@ -180,21 +190,36 @@
         .two-col, .pos-layout { grid-template-columns: 1fr; }
         .cart-card { position: static; }
         .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+        .product-card-foot { align-items: stretch; flex-direction: column; }
+        .product-card-foot .button { width: 100%; }
+        .product-card p { min-height: 0; }
         .product-card-top { padding: 12px 12px 5px; }
         .product-card-body { padding: 5px 12px 12px; }
         .product-card h3 { font-size: 16px; }
         .product-art { width: 34px; height: 34px; font-size: 17px; }
+        .toolbar-row { align-items: stretch; }
+        .toolbar-row .input, .toolbar-row .select { width: 100%; min-width: 0; }
+        .category-chips { flex-wrap: nowrap; margin-right: -16px; padding: 2px 16px 8px 0; overflow-x: auto; scrollbar-width: none; }
+        .category-chips::-webkit-scrollbar { display: none; }
+        .chip { flex: 0 0 auto; min-height: 40px; }
         .queue-grid { grid-template-columns: 1fr; }
-        .promo-banner { min-height: 195px; padding: 22px; }
-        .promo-cup { width: 100px; height: 100px; font-size: 50px; }
-        .mobile-nav { position: fixed; inset: auto 0 0; z-index: 5; display: flex; justify-content: space-around; padding: 8px 5px max(8px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: #fffefa; }
-        .mobile-nav button { display: grid; justify-items: center; gap: 3px; border: 0; background: transparent; color: #74675f; font-size: 9px; }
+        .promo-banner { min-height: 0; align-items: stretch; padding: 20px; }
+        .promo-banner h2 { font-size: 30px; }
+        .promo-banner p { font-size: 12px; }
+        .promo-cup { width: 76px; height: 76px; font-size: 38px; align-self: center; }
+        .mobile-nav { position: fixed; inset: auto 0 0; z-index: 5; display: flex; justify-content: space-around; padding: 7px 5px max(8px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: #fffefa; }
+        .mobile-nav button { display: grid; min-width: 52px; min-height: 44px; justify-items: center; gap: 3px; border: 0; background: transparent; color: #74675f; font-size: 9px; }
         .mobile-nav button.active { color: var(--orange-dark); font-weight: 750; }
         .mobile-nav span { font-size: 17px; }
+        .modal-backdrop { padding: 10px; align-items: end; }
+        .modal { max-height: 88vh; padding: 18px; border-radius: 16px 16px 10px 10px; }
       }
       @media (max-width: 390px) {
         .stats { grid-template-columns: 1fr 1fr; }
         .product-grid { grid-template-columns: 1fr; }
-        .page-heading { display: block; }
-        .page-heading > .button { margin-top: 14px; }
+        .promo-banner { display: block; }
+        .promo-cup { display: none; }
+        .content { padding-inline: 12px; }
+        .category-chips { margin-right: -12px; padding-right: 12px; }
+        .mobile-nav button { min-width: 48px; }
       }
